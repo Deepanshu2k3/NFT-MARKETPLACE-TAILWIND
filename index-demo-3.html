@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>Marketplace Template</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/core-img/favicon.ico">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <!-- Tailwind Stylesheet -->
+    <link rel="stylesheet" href="assets/css/tailwindcss.css">
+
+</head>
+
+<body class="darker">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preload-content">
+            <div id="dream-load"></div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <div class="w-full text-gray-100 bg-gray-800">
+        <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+          <div class="p-4 flex flex-row items-center justify-between">
+            <a href="#" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline"><img src="assets/img/core-img/logo.png" alt="logo"></a>
+            <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+              <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+          <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+            <a class="p-2 mt-2 text-sm font-semibold text-gray-200 rounded-sm md:mt-0" href="index.html">Home</a>
+            
+            <div @click.away="open = false" class="relative" x-data="{ open: false }">
+              <button @click="open = !open" class="flex flex-row items-center w-full mt-2 text-sm font-semibold text-left bg-transparent rounded-lg px-2">
+                <span>Discover</span>
+                <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+              </button>
+              <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48 z-99">
+                <div class="px-2 py-2 bg-gray-900 rounded-md shadow dark-mode:bg-gray-800">
+                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 hover:bg-gray-200" href="auctions.html">Live Auctions</a>
+                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 hover:bg-gray-200" href="discover.html">Discover style 1</a>
+                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 hover:bg-gray-200" href="discover-2.html">Discover style 2</a>
+                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 hover:bg-gray-200" href="discover-3.html">Discover style 3</a>
+                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 hover:bg-gray-200" href="item-details.html">Item Details</a>
+                </div>
+              </div>
+            </div>  
+
+            <a class="p-2 mt-2 text-sm font-semibold text-gray-200 rounded-sm md:mt-0" href="activity.html">Activity</a>
+
+            <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                <button @click="open = !open" class="flex flex-row items-center w-full mt-2 text-sm font-semibold text-left bg-transparent rounded-lg px-2">
+                  <span>Community</span>
+                  <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48 z-99">
+                  <div class="px-2 py-2 bg-gray-900 rounded-md shadow dark-mode:bg-gray-800">
+                      <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 hover:bg-gray-200" href="index-blog.html">Blog 1</a>
+                      <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 hover:bg-gray-200" href="index-blog-with-sidebar.html">Blog 2</a>
+                      <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 hover:bg-gray-200" href="index-single-blog.html">Post Details</a>
+                  </div>
+                </div>
+              </div> 
+
+              <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                <button @click="open = !open" class="flex flex-row items-center w-full mt-2 text-sm font-semibold text-left bg-transparent rounded-lg px-2">
+                  <span>Pages</span>
+                  <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48 z-99">
+                  <div class="px-2 py-2 bg-gray-900 rounded-md shadow dark-mode:bg-gray-800">
+                      <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 hover:bg-gray-200" href="wallet-connect.html">Wallet Connect</a>
+                      <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 hover:bg-gray-200" href="create-item.html">Create Item</a>
+                      <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 hover:bg-gray-200" href="auctions.html">Authors</a>
+                      <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 hover:bg-gray-200" href="profile.html">Author Profile</a>
+                      <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 hover:bg-gray-200" href="login.html">Login</a>
+                      <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 hover:bg-gray-200" href="signup.html">Sign Up</a>
+                  </div>
+                </div>
+              </div> 
+
+              <a class="p-2 mt-2 text-sm font-semibold text-gray-200 rounded-sm md:mt-0" href="contact-us.html">Contact</a>
+              <a class="p-2 mt-2 text-sm font-semibold text-gray-200 rounded-sm md:mt-0 btn login-btn ml-5 inline-block" href="wallet-connect.html">Connect Wallet</a>
+
+          </nav>
+        </div>
+      </div>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Welcome Area Start ##### -->
+    <section class="hero-section demo-3 section-padding" id="home">
+        <!-- Hero Content -->
+        <div class="hero-section-content">
+            
+            <div class="container mx-auto sm:px-4 ">
+                <div class="flex flex-wrap  items-center">
+                    <!-- Welcome Content -->
+                    <div class="w-full lg:w-1/2 pr-4 pl-4 md:w-full pr-4 pl-4">
+                        <div class="welcome-content mb-24">
+                            <div class="mb-8">
+                                <h3 class="special-head gradient-text">All NFTs You need in One Marketplace</h3>
+                            </div>
+                            <h1 class="fadeInUp" data-wow-delay="0.2s">The Best Place to Collect , Buy and Sell <span class="gradient-t">Awesome NFTs, Audio and Rareible Assets</span> </h1>
+                            <p class="w-text fadeInUp" data-wow-delay="0.3s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet dolorem blanditiis ad perferendis, labore delectus dolor adipisicing elit sit amet, adipisicing elit. Eveniet adipisicing elit.</p>
+                            <div class="dream-btn-group fadeInUp" data-wow-delay="0.4s">
+                                <a href="#" class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline more-btn mr-3">Explore More</a>
+                                <a href="#" class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline more-btn">Collect NFT </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 pr-4 pl-4">
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Welcome Area End ##### -->
+
+    <!-- ##### Top Collections Start ##### -->
+    <section class="pb-16 pt-24 clearfix" >
+        <div class="container mx-auto sm:px-4">
+            
+            <div class="section-heading text-center">
+                
+                <div class="dream-dots justify-center fadeInUp" data-wow-delay="0.2s">
+                    <span>Our Top Collections</span>
+                </div>
+                <h2 class="fadeInUp" data-wow-delay="0.3s">Popular Collections</h2>
+                <p class="fadeInUp" data-wow-delay="0.4s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis accumsan nisi Ut ut felis congue nisl hendrerit commodo.</p>
+            </div>
+                
+
+            <div class="flex flex-wrap ">
+                <div class="w-full md:w-1/2 pr-4 pl-4 lg:w-1/4 pr-4 pl-4">
+                    <!-- Content -->
+                    <a href="discover.html" class="service_single_content collection-item wow fadeInUp" data-wow-delay="0.2s">
+                        <!-- Icon -->
+                        <div class="collection_icon">
+                            <img src="assets/img/art-work/c1.png" alt="">
+                        </div>
+                        <div class="collection_info">
+                            <h6>Cyberpunk City Art</h6>
+                            <p>Owner : <span class="w-text">Naretor-Nole</span></p>
+                        </div>
+                        
+                    </a>
+                </div>
+                <div class="w-full md:w-1/2 pr-4 pl-4 lg:w-1/4 pr-4 pl-4">
+                    <!-- Content -->
+                    <a href="discover.html" class="service_single_content collection-item wow fadeInUp" data-wow-delay="0.3s">
+                        <!-- Icon -->
+                        <div class="collection_icon">
+                            <img src="assets/img/art-work/c2.png" alt="">
+                        </div>
+                        <div class="collection_info">
+                            <h6>Murphy the Mutant</h6>
+                            <p>Owner : <span class="w-text">Johan Doe</span></p>
+                        </div>
+                        
+                    </a>
+                </div>
+                <div class="w-full md:w-1/2 pr-4 pl-4 lg:w-1/4 pr-4 pl-4">
+                    <!-- Content -->
+                    <a href="discover.html" class="service_single_content collection-item wow fadeInUp" data-wow-delay="0.4s">
+                        <!-- Icon -->
+                        <div class="collection_icon">
+                            <img src="assets/img/art-work/c3.png" alt="">
+                        </div>
+                        <div class="collection_info">
+                            <h6>Beeple Special Edition</h6>
+                            <p>Owner : <span class="w-text">Nole_moreta</span></p>
+                        </div>
+                        
+                    </a>
+                </div>
+                <div class="w-full md:w-1/2 pr-4 pl-4 lg:w-1/4 pr-4 pl-4">
+                    <!-- Content -->
+                    <a href="discover.html" class="service_single_content collection-item wow fadeInUp" data-wow-delay="0.5s">
+                        <!-- Icon -->
+                        <div class="collection_icon">
+                            <img src="assets/img/art-work/c4.png" alt="">
+                        </div>
+                        <div class="collection_info">
+                            <h6>Floyd Mayweather Jr.</h6>
+                            <p>Owner : <span class="w-text">Kera_one</span></p>
+                        </div>
+                        
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ##### Top Sellers Start ##### -->
+    <section class="about-us-area pt-0 pb-24 clearfix">
+        <div class="container mx-auto sm:px-4">
+            <div class="flex flex-wrap  items-center">
+                
+                <div class="w-full lg:w-full pr-4 pl-4">
+                    <div class="who-we-contant">
+                        <div class="dream-dots text-left fadeInUp" data-wow-delay="0.2s" >
+                            <span class="gradient-text ">Creative Creators</span>
+                        </div>
+                        <h4 class="fadeInUp" data-wow-delay="0.3s">Top Sellers This Month</h4>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/3 pr-4 pl-4">
+                    <div class="creator-sec dd-bg">
+                        <div class="author-item">
+                            <div class="author-rank">01</div>
+                            <div class="author-img"><img src="assets/img/authors/1.png" width="70" alt=""></div>
+                            <div class="author-info">
+                                <a href="profile.html"><h5 class="author-name text-lg">LarySmith-30</h5></a>
+                                <p class="author-earn mb-0">647.34 ETH</p>
+                            </div>
+                        </div>
+                        <div class="author-item">
+                            <div class="author-rank">02</div>
+                            <div class="author-img"><img src="assets/img/authors/2.png" width="70" alt=""></div>
+                            <div class="author-info">
+                                <a href="profile.html"><h5 class="author-name text-lg">Amillia Nnor</h5></a>
+                                <p class="author-earn mb-0">521.85 ETH</p>
+                            </div>
+                        </div>
+                        <div class="author-item">
+                            <div class="author-rank">03</div>
+                            <div class="author-img"><img src="assets/img/authors/3.png" width="70" alt=""></div>
+                            <div class="author-info">
+                                <a href="profile.html"><h5 class="author-name text-lg">Naretor-Nole</h5></a>
+                                <p class="author-earn mb-0">511.45 ETH</p>
+                            </div>
+                        </div>
+                        <div class="author-item">
+                            <div class="author-rank">04</div>
+                            <div class="author-img"><img src="assets/img/authors/4.png" width="70" alt=""></div>
+                            <div class="author-info">
+                                <a href="profile.html"><h5 class="author-name text-lg">Johan Donem</h5></a>
+                                <p class="author-earn mb-0">499.11 ETH</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/3 pr-4 pl-4 mt-s">
+                    <div class="creator-sec dd-bg">
+                        <div class="author-item">
+                            <div class="author-rank">05</div>
+                            <div class="author-img"><img src="assets/img/authors/5.png" width="70" alt=""></div>
+                            <div class="author-info">
+                                <a href="profile.html"><h5 class="author-name text-lg">LarySmith-30</h5></a>
+                                <p class="author-earn mb-0">647.34 ETH</p>
+                            </div>
+                        </div>
+                        <div class="author-item">
+                            <div class="author-rank">06</div>
+                            <div class="author-img"><img src="assets/img/authors/6.png" width="70" alt=""></div>
+                            <div class="author-info">
+                                <a href="profile.html"><h5 class="author-name text-lg">Amillia Nnor</h5></a>
+                                <p class="author-earn mb-0">521.85 ETH</p>
+                            </div>
+                        </div>
+                        <div class="author-item">
+                            <div class="author-rank">07</div>
+                            <div class="author-img"><img src="assets/img/authors/7.png" width="70" alt=""></div>
+                            <div class="author-info">
+                                <a href="profile.html"><h5 class="author-name text-lg">Naretor-Nole</h5></a>
+                                <p class="author-earn mb-0">511.45 ETH</p>
+                            </div>
+                        </div>
+                        <div class="author-item">
+                            <div class="author-rank">08</div>
+                            <div class="author-img"><img src="assets/img/authors/8.png" width="70" alt=""></div>
+                            <div class="author-info">
+                                <a href="profile.html"><h5 class="author-name text-lg">Johan Donem</h5></a>
+                                <p class="author-earn mb-0">499.11 ETH</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/3 pr-4 pl-4 mt-s">
+                    <div class="creator-sec dd-bg">
+                        <div class="author-item">
+                            <div class="author-rank">09</div>
+                            <div class="author-img"><img src="assets/img/authors/9.png" width="70" alt=""></div>
+                            <div class="author-info">
+                                <a href="profile.html"><h5 class="author-name text-lg">LarySmith-30</h5></a>
+                                <p class="author-earn mb-0">647.34 ETH</p>
+                            </div>
+                        </div>
+                        <div class="author-item">
+                            <div class="author-rank">10</div>
+                            <div class="author-img"><img src="assets/img/authors/10.png" width="70" alt=""></div>
+                            <div class="author-info">
+                                <a href="profile.html"><h5 class="author-name text-lg">Amillia Nnor</h5></a>
+                                <p class="author-earn mb-0">521.85 ETH</p>
+                            </div>
+                        </div>
+                        <div class="author-item">
+                            <div class="author-rank">11</div>
+                            <div class="author-img"><img src="assets/img/authors/11.png" width="70" alt=""></div>
+                            <div class="author-info">
+                                <a href="profile.html"><h5 class="author-name text-lg">Naretor-Nole</h5></a>
+                                <p class="author-earn mb-0">511.45 ETH</p>
+                            </div>
+                        </div>
+                        <div class="author-item">
+                            <div class="author-rank">12</div>
+                            <div class="author-img"><img src="assets/img/authors/12.png" width="70" alt=""></div>
+                            <div class="author-info">
+                                <a href="profile.html"><h5 class="author-name text-lg">Johan Donem</h5></a>
+                                <p class="author-earn mb-0">499.11 ETH</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ##### Top Authors End ##### -->
+
+
+    <section class="features pt-0 pb-24 ">
+        <div class="container mx-auto sm:px-4">
+            <div class="section-heading text-center">
+                <!-- Dream Dots -->
+                <div class="dream-dots justify-center fadeInUp" data-wow-delay="0.2s">
+                     <span>Dicover New Items</span>
+                </div>
+                <h2 class="fadeInUp" data-wow-delay="0.3s">New Listed Items</h2>
+                <p class="fadeInUp" data-wow-delay="0.4s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis accumsan nisi Ut ut felis congue nisl hendrerit commodo.</p>
+            </div>
+            <div class="flex flex-wrap  items-center">
+                <div class="lg:w-1/4 pr-4 pl-4 sm:w-1/2 pr-4 pl-4 sm:w-full pr-4 pl-4">
+                    <div class="pricing-item ">
+                        <div class="wraper">
+                            <a href="item-details.html"><img src="assets/img/art-work/1.png" alt=""></a>
+                            <a href="item-details.html"><h4>Scarecrow in daylight</h4></a>
+                            <div class="owner-info">
+                                <img src="assets/img/authors/2.png" width="40" alt="">
+                                <a href="profile.html"><h3>@Smith Wright</h3></a>
+                            </div>
+                            <span><span class="g-text">Price</span> 0.081 ETH <span class="g-text ml-8">1 of 10</span></span> 
+                            <div class="pricing">Highest Bid : <span class="ml-8">0.081 ETH</span> </div> 
+                            <div class="admire">
+                                <div class="adm"><i class="fa fa-clock-o"></i>6 Hours Ago</div>
+                                <div class="adm"><i class="fa fa-heart-o"></i>134 Like</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="lg:w-1/4 pr-4 pl-4 sm:w-1/2 pr-4 pl-4 sm:w-full pr-4 pl-4">
+                    <div class="pricing-item ">
+                        <div class="wraper">
+                            <a href="item-details.html"><img src="assets/img/art-work/2.png" alt=""></a>
+                            <a href="item-details.html"><h4>Darklight Angel 01</h4></a>
+                            <div class="owner-info">
+                                <img src="assets/img/authors/3.png" width="40" alt="">
+                                <a href="profile.html"><h3>@Smith Wright</h3></a>
+                            </div>
+                            <span><span class="g-text">Price</span> 0.081 ETH <span class="g-text ml-8">1 of 10</span></span> 
+                            <div class="pricing">Highest Bid : <span class="ml-8">0.081 ETH</span> </div> 
+                            <div class="admire">
+                                <div class="adm"><i class="fa fa-clock-o"></i>6 Hours Ago</div>
+                                <div class="adm"><i class="fa fa-heart-o"></i>134 Like</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="lg:w-1/4 pr-4 pl-4 sm:w-1/2 pr-4 pl-4 sm:w-full pr-4 pl-4">
+                    <div class="pricing-item ">
+                        <div class="wraper">
+                            <a href="item-details.html"><img src="assets/img/art-work/3.png" alt=""></a>
+                            <a href="item-details.html"><h4>Becoming one with Nature</h4></a>
+                            <div class="owner-info">
+                                <img src="assets/img/authors/8.png" width="40" alt="">
+                                <a href="profile.html"><h3>@Smith Wright</h3></a>
+                            </div>
+                            <span><span class="g-text">Price</span> 0.081 ETH <span class="g-text ml-8">1 of 10</span></span> 
+                            <div class="pricing">Highest Bid : <span class="ml-8">0.081 ETH</span> </div> 
+                            <div class="admire">
+                                <div class="adm"><i class="fa fa-clock-o"></i>6 Hours Ago</div>
+                                <div class="adm"><i class="fa fa-heart-o"></i>134 Like</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+                <div class="lg:w-1/4 pr-4 pl-4 sm:w-1/2 pr-4 pl-4 sm:w-full pr-4 pl-4">
+                    <div class="pricing-item ">
+                        <div class="wraper">
+                            <a href="item-details.html"><img src="assets/img/art-work/4.png" alt=""></a>
+                            <a href="item-details.html"><h4>Twilight Fracture City</h4></a>
+                            <div class="owner-info">
+                                <img src="assets/img/authors/6.png" width="40" alt="">
+                                <a href="profile.html"><h3>@Smith Wright</h3></a>
+                            </div>
+                            <span><span class="g-text">Price</span> 0.081 ETH <span class="g-text ml-8">1 of 10</span></span> 
+                            <div class="pricing">Highest Bid : <span class="ml-8">0.081 ETH</span> </div> 
+                            <div class="admire">
+                                <div class="adm"><i class="fa fa-clock-o"></i>6 Hours Ago</div>
+                                <div class="adm"><i class="fa fa-heart-o"></i>134 Like</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+                
+                <div class="lg:w-1/4 pr-4 pl-4 sm:w-1/2 pr-4 pl-4 sm:w-full pr-4 pl-4">
+                    <div class="pricing-item ">
+                        <div class="wraper">
+                            <a href="item-details.html"><img src="assets/img/art-work/5.png" alt=""></a>
+                            <a href="item-details.html"><h4>Resonate Sanctuary II</h4></a>
+                            <div class="owner-info">
+                                <img src="assets/img/authors/2.png" width="40" alt="">
+                                <a href="profile.html"><h3>@Smith Wright</h3></a>
+                            </div>
+                            <span><span class="g-text">Price</span> 0.081 ETH <span class="g-text ml-8">1 of 10</span></span> 
+                            <div class="pricing">Highest Bid : <span class="ml-8">0.081 ETH</span> </div> 
+                            <div class="admire">
+                                <div class="adm"><i class="fa fa-clock-o"></i>6 Hours Ago</div>
+                                <div class="adm"><i class="fa fa-heart-o"></i>134 Like</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="lg:w-1/4 pr-4 pl-4 sm:w-1/2 pr-4 pl-4 sm:w-full pr-4 pl-4">
+                    <div class="pricing-item ">
+                        <div class="wraper">
+                            <a href="item-details.html"><img src="assets/img/art-work/6.png" alt=""></a>
+                            <a href="item-details.html"><h4>Analogue refraction #3</h4></a>
+                            <div class="owner-info">
+                                <img src="assets/img/authors/3.png" width="40" alt="">
+                                <a href="profile.html"><h3>@Smith Wright</h3></a>
+                            </div>
+                            <span><span class="g-text">Price</span> 0.081 ETH <span class="g-text ml-8">1 of 10</span></span> 
+                            <div class="pricing">Highest Bid : <span class="ml-8">0.081 ETH</span> </div> 
+                            <div class="admire">
+                                <div class="adm"><i class="fa fa-clock-o"></i>6 Hours Ago</div>
+                                <div class="adm"><i class="fa fa-heart-o"></i>134 Like</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="lg:w-1/4 pr-4 pl-4 sm:w-1/2 pr-4 pl-4 sm:w-full pr-4 pl-4">
+                    <div class="pricing-item ">
+                        <div class="wraper">
+                            <a href="item-details.html"><img src="assets/img/art-work/7.png" alt=""></a>
+                            <a href="item-details.html"><h4>Super-Neumorphism #7</h4></a>
+                            <div class="owner-info">
+                                <img src="assets/img/authors/8.png" width="40" alt="">
+                                <a href="profile.html"><h3>@Smith Wright</h3></a>
+                            </div>
+                            <span><span class="g-text">Price</span> 0.081 ETH <span class="g-text ml-8">1 of 10</span></span> 
+                            <div class="pricing">Highest Bid : <span class="ml-8">0.081 ETH</span> </div> 
+                            <div class="admire">
+                                <div class="adm"><i class="fa fa-clock-o"></i>6 Hours Ago</div>
+                                <div class="adm"><i class="fa fa-heart-o"></i>134 Like</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+                <div class="lg:w-1/4 pr-4 pl-4 sm:w-1/2 pr-4 pl-4 sm:w-full pr-4 pl-4">
+                    <div class="pricing-item ">
+                        <div class="wraper">
+                            <a href="item-details.html"><img src="assets/img/art-work/8.png" alt=""></a>
+                            <a href="item-details.html"><h4>Exe Dream Sequence </h4></a>
+                            <div class="owner-info">
+                                <img src="assets/img/authors/6.png" width="40" alt="">
+                                <a href="profile.html"><h3>@Smith Wright</h3></a>
+                            </div>
+                            <span><span class="g-text">Price</span> 0.081 ETH <span class="g-text ml-8">1 of 10</span></span> 
+                            <div class="pricing">Highest Bid : <span class="ml-8">0.081 ETH</span> </div> 
+                            <div class="admire">
+                                <div class="adm"><i class="fa fa-clock-o"></i>6 Hours Ago</div>
+                                <div class="adm"><i class="fa fa-heart-o"></i>134 Like</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="w-full lg:w-full pr-4 pl-4 text-center">
+                    <a class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline more-btn fadeInUp" data-wow-delay="0.6s" href="discover.html">Load More</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="features pt-0 pb-16 ">
+        <div class="container mx-auto sm:px-4">
+            <div class="section-heading text-center">
+                <!-- Dream Dots -->
+                <div class="dream-dots justify-center fadeInUp" data-wow-delay="0.2s">
+                     <span>Live auctions</span>
+                </div>
+                <h2 class="fadeInUp" data-wow-delay="0.3s">Live auctions <img src="assets/img/art-work/fire.png" width="20" class="inline-block" alt=""></h2>
+                <p class="fadeInUp" data-wow-delay="0.4s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis accumsan nisi Ut ut felis congue nisl hendrerit commodo.</p>
+            </div>
+            <div class="flex flex-wrap  items-center">
+                <div class="lg:w-1/4 pr-4 pl-4 sm:w-1/2 pr-4 pl-4 sm:w-full pr-4 pl-4">
+                    <div class="pricing-item ">
+                        <div class="wraper">
+                            <a href="item-details.html"><img src="assets/img/art-work/9.png" alt=""></a>
+                            <a href="item-details.html"><h4>Bored Ape Yacht Club</h4></a>
+                            <div class="owner-info">
+                                <img src="assets/img/authors/2.png" width="40" alt="">
+                                <a href="profile.html"><h3>@Amillia Nnor</h3></a>
+                            </div>
+                            <span><span class="g-text">Price</span> 0.081 ETH <span class="g-text ml-8">1 of 10</span></span> 
+                            <!-- Countdown  -->
+                            <div class="count-down titled circled text-center">
+                                <div class="simple_timer"></div>
+                            </div>
+
+                            <div class="admire">
+                                <a class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline more-btn w-full" href="item-details.html">Place Bid</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="lg:w-1/4 pr-4 pl-4 sm:w-1/2 pr-4 pl-4 sm:w-full pr-4 pl-4">
+                    <div class="pricing-item ">
+                        <div class="wraper">
+                            <a href="item-details.html"><img src="assets/img/art-work/1.png" alt=""></a>
+                            <a href="item-details.html"><h4>After Snow: Attraction</h4></a>
+                            <div class="owner-info">
+                                <img src="assets/img/authors/3.png" width="40" alt="">
+                                <a href="profile.html"><h3>@Johan Done</h3></a>
+                            </div>
+                            <span><span class="g-text">Price</span> 0.081 ETH <span class="g-text ml-8">1 of 10</span></span> 
+                            <!-- Countdown  -->
+                            <div class="count-down titled circled text-center">
+                                <div class="simple_timer"></div>
+                            </div>
+
+                            <div class="admire">
+                               <a class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline more-btn w-full" href="item-details.html">Place Bid</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="lg:w-1/4 pr-4 pl-4 sm:w-1/2 pr-4 pl-4 sm:w-full pr-4 pl-4">
+                    <div class="pricing-item ">
+                        <div class="wraper">
+                            <a href="item-details.html"><img src="assets/img/art-work/11.png" alt=""></a>
+                            <a href="item-details.html"><h4>Mortimer Crypto Mystic</h4></a>
+                            <div class="owner-info">
+                                <img src="assets/img/authors/8.png" width="40" alt="">
+                                <a href="profile.html"><h3>@LarySmith-3</h3></a>
+                            </div>
+                            <span><span class="g-text">Price</span> 0.081 ETH <span class="g-text ml-8">1 of 10</span></span> 
+                            <!-- Countdown  -->
+                            <div class="count-down titled circled text-center">
+                                <div class="simple_timer"></div>
+                            </div>
+
+                            <div class="admire">
+                                <a class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline more-btn w-full" href="item-details.html">Place Bid</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+                <div class="lg:w-1/4 pr-4 pl-4 sm:w-1/2 pr-4 pl-4 sm:w-full pr-4 pl-4">
+                    <div class="pricing-item ">
+                        <div class="wraper">
+                            <a href="item-details.html"><img src="assets/img/art-work/2.png" alt=""></a>
+                            <a href="item-details.html"><h4>People are the pillars</h4></a>
+                            <div class="owner-info">
+                                <img src="assets/img/authors/6.png" width="40" alt="">
+                                <a href="profile.html"><h3>@SmithWright</h3></a>
+                            </div>
+                            <span><span class="g-text">Price</span> 0.081 ETH <span class="g-text ml-8">1 of 10</span></span> 
+                            <!-- Countdown  -->
+                            <div class="count-down titled circled text-center">
+                                <div class="simple_timer"></div>
+                            </div>
+
+                            <div class="admire">
+                                <a class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline more-btn w-full" href="item-details.html">Place Bid</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+                
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="main-footer text-center">
+        <!--Widgets Section-->
+          <div class="widgets-section padding-top-small padding-bottom-small">
+             <div class="container mx-auto sm:px-4">
+                 
+                <div class="flex flex-wrap  clearfix">
+                   <!--Footer Column-->
+                   <div class="footer-column md:w-1/3 pr-4 pl-4 sm:w-1/2 pr-4 pl-4 sm:w-full pr-4 pl-4">
+                      <div class="footer-widget about-widget">
+                         <h3 class="has-line-center">About Us</h3>
+                         <div class="widget-content">
+                            <div class="text">At the end of the day, going forward, a new normal that has evolved generation X is on the runway heading towards a streamlined cloud solution. </div>
+                               <ul class="social-links">
+                                  <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
+                                  <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                                  <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                  <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                                  <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                               </ul>
+                             </div>
+                         </div>
+                     </div><!--End Footer Column-->
+                     
+                     <!--Footer Column-->
+                     <div class="footer-column md:w-1/3 pr-4 pl-4 sm:w-1/2 pr-4 pl-4 sm:w-full pr-4 pl-4">
+                         <div class="footer-widget contact-widget">
+                             <h3 class="has-line-center">Contact Us</h3>
+                             <div class="widget-content">
+                                 <ul class="contact-info">
+                                     <li><div class="icon"><span class="flaticon-support"></span></div></li>
+                                     <li>10, Mc Donald Avenue, Sunset Park, Newyork</li>
+                                     <li>+99 999 9999</li>
+                                     <li>info@yourdomain.com</li>
+                                 </ul>
+                             </div>
+                         </div>
+                     </div><!--End Footer Column-->
+                     
+                     <!--Footer Column-->
+                     <div class="footer-column md:w-1/3 pr-4 pl-4 sm:w-full pr-4 pl-4 sm:w-full pr-4 pl-4">
+                         <div class="footer-widget newsletter-widget">
+                             <h3 class="has-line-center">Newsletter</h3>
+                             <div class="widget-content">
+                               <div class="text">Stay Updated with our latest news. We promise not to spam</div>
+                                 <div class="newsletter-form">
+                                     <form method="post">
+                                         <div class="mb-4">
+                                             <input type="email" name="field-name" value="" placeholder="Your Email" required="">
+                                             <button type="submit" class="send-btn"><span class="fa fa-paper-plane-o"></span></button>
+                                         </div>
+                                     </form>
+                                 </div>
+                             </div>
+                         </div>
+                     </div><!--End Footer Column-->
+                     
+                 </div>
+             </div>
+         </div>
+         
+         <!--Footer Bottom-->
+          <div class="footer-bottom">
+             <div class="auto-container">
+                <div class="copyright-text">Copyright ©. All Rights Reserved</div>
+             </div>
+          </div>
+        </footer>
+        <!-- ##### Footer Area End ##### -->
+
+    <!-- ########## All JS ########## -->
+    <!-- jQuery js -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="assets/js/plugins.js"></script>
+    
+    <script src="assets/js/jquery.syotimer.min.js"></script>
+
+    <!-- script js -->
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
